@@ -32,314 +32,604 @@ body {
   text-align: center;
 }
 
-#container {
-  max-width: 1200px;
-  width: 100%;
-  height: calc(100vh - 100px);
-  box-sizing: border-box;
-  position: relative;
-  transform: translateZ(0);
-  z-index: 1;
-  border: 1px solid #222;
-}
+@media (min-width: 720px) {
+  #container {
+    max-width: 1200px;
+    width: 100%;
+    height: calc(100vh - 100px);
+    box-sizing: border-box;
+    position: relative;
+    transform: translateZ(0);
+    z-index: 1;
+    border: 1px solid #222;
+  }
 
-#container > .inner {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  padding: 60px 0px;
-  box-sizing: border-box;
-  background-color: #fef2f7;
-}
+  #container > .inner {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 60px 0px;
+    box-sizing: border-box;
+    background-color: #fef2f7;
+  }
 
-#container > .inner::-webkit-scrollbar {
-  display: none;
-}
+  #container > .inner::-webkit-scrollbar {
+    display: none;
+  }
 
-#container #top {
-  position: sticky;
-  top: 0;
-  width: 90%;
-  margin: 0px auto;
-  z-index: 999;
-  padding-bottom: 20px;
-  background-color: #fef2f7;
-}
+  #container #top {
+    position: sticky;
+    top: 0;
+    width: 90%;
+    margin: 0px auto;
+    z-index: 999;
+    padding-bottom: 20px;
+    background-color: #fef2f7;
+  }
 
-h1 {
-  font-size: clamp(2.2rem, 2.9vw, 10rem);
-  margin-bottom: 50px;
-  font-family: "PartialSans";
-  letter-spacing: 2px;
-  font-weight: normal;
-  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
-}
+  h1 {
+    font-size: clamp(2.2rem, 2.9vw, 10rem);
+    margin-bottom: 50px;
+    font-family: "PartialSans";
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  }
 
-.tabsArea {
-  width: calc(100% - 10px);
-  margin: 0px auto;
-  height: 90px;
-  background-color: #fef2f7;
-  position: relative;
-  z-index: 10;
-}
+  .tabsArea {
+    width: calc(100% - 10px);
+    margin: 0px auto;
+    height: 90px;
+    background-color: #fef2f7;
+    position: relative;
+    z-index: 10;
+  }
 
-.tabs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #333;
-  border-radius: 10px;
-  margin: 0px auto;
-  background-color: #fff;
-  width: 60%;
-  padding: 2px 6px;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 0px #000;
-  font-family: "YeogiOttaeJalnan";
-  font-size: 15px;
-  color: #333;
-  z-index: 10;
-}
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 0px auto;
+    background-color: #fff;
+    width: clamp(400px, 60%, 750px);
+    padding: 2px 6px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 0px #000;
+    font-family: "YeogiOttaeJalnan";
+    font-size: 15px;
+    color: #333;
+    z-index: 10;
+  }
 
-.tabs li {
-  width: calc(100% / 3);
-  box-sizing: border-box;
-  padding: 0px 20px;
-  cursor: pointer;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 6px;
-}
+  .tabs li {
+    width: calc(100% / 3);
+    box-sizing: border-box;
+    padding: 0px 20px;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+  }
 
-.tabs li:hover {
-  background-color: #ddf3dd;
-  border: 1px solid #666;
-}
+  .tabs li:hover {
+    background-color: #ddf3dd;
+    border: 1px solid #666;
+  }
 
-.tabs li.on {
-  font-weight: bold;
-  background-color: #c2e1c2;
-  border: 1px solid #333;
-}
+  .tabs li.on {
+    font-weight: bold;
+    background-color: #c2e1c2;
+    border: 1px solid #333;
+  }
 
-.taskWrap {
-  position: relative;
-  width: 700px;
-  margin: 0px auto;
-  height: 500px;
-  border: 1px solid #222;
-  box-sizing: border-box;
-  border-radius: 60px;
-  box-shadow: 1px 6px 0px #000;
-}
+  .taskWrap {
+    position: relative;
+    width: clamp(600px, 40vw, 700px);
+    margin: 0px auto;
+    height: 500px;
+    border: 1px solid #222;
+    box-sizing: border-box;
+    border-radius: 60px;
+    box-shadow: 1px 6px 0px #000;
+  }
 
-#taskBoard {
-  width: 700px;
-  margin: 0px auto;
-  z-index: 3;
-  background-color: #fffcf1;
-  border-radius: 60px;
-  box-sizing: border-box;
-  height: 500px;
-  overflow-y: scroll;
-  border: 1px solid #222;
-}
+  #taskBoard {
+    max-width: 700px;
+    margin: 0px auto;
+    z-index: 3;
+    background-color: #fffcf1;
+    border-radius: 60px;
+    box-sizing: border-box;
+    height: 500px;
+    overflow-y: scroll;
+    border: 1px solid #222;
+  }
 
-#taskBoard::-webkit-scrollbar {
-  display: none;
-}
+  #taskBoard::-webkit-scrollbar {
+    display: none;
+  }
 
-.task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 40px;
-  box-sizing: border-box;
-  height: 110px;
-  position: relative;
-  z-index: 4;
-  width: 80%;
-  margin: 6px auto;
-  background-image: url("img/bg.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 40px;
+    box-sizing: border-box;
+    height: 110px;
+    position: relative;
+    z-index: 4;
+    width: 80%;
+    margin: 6px auto;
+    background-image: url("img/bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-.task-done {
-  text-decoration: line-through;
-  color: #aaa;
-}
+  .task-done {
+    text-decoration: line-through;
+    color: #aaa;
+  }
 
-button#addList {
-  background-color: rgba(255, 103, 161, 1);
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 66px;
-  height: 66px;
-  border-radius: 40px;
-  border: 1px solid #333;
-  padding: 6px;
-  box-shadow: 1px 3px #000;
-  cursor: pointer;
-  z-index: 1001;
-}
+  button#addList {
+    background-color: rgba(255, 103, 161, 1);
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 66px;
+    height: 66px;
+    border-radius: 40px;
+    border: 1px solid #333;
+    padding: 6px;
+    box-shadow: 1px 3px #000;
+    cursor: pointer;
+    z-index: 1001;
+  }
 
-button#addList:hover {
-  background-color: rgba(255, 0, 98, 1);
-}
+  button#addList:hover {
+    background-color: rgba(255, 0, 98, 1);
+  }
 
-button#close {
-  position: absolute;
-  right: -15px;
-  top: -15px;
-  border: 1px solid #333;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 15px;
-  background-color: #fffcf1;
-  box-shadow: 1px 2px #000;
-  cursor: pointer;
-}
+  button#close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    border: 1px solid #333;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    background-color: #fffcf1;
+    box-shadow: 1px 2px #000;
+    cursor: pointer;
+  }
 
-button#close:hover {
-  background-color: #666;
-  color: #fff;
-}
+  button#close:hover {
+    background-color: #666;
+    color: #fff;
+  }
 
-.cls-1 {
-  fill: none;
-  stroke: #333;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-  stroke-width: 2px;
-}
-.check {
-  appearance: none;
-  width: 0;
-  height: 0;
-  margin-right: 10px;
-}
+  .cls-1 {
+    fill: none;
+    stroke: #333;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
 
-.task input.check {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #333;
-  border-radius: 4px;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.2s;
-}
+  .task input.check {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
 
-.task .delete-btn {
-  background: none;
-  border: none;
-}
+  .task .delete-btn {
+    background: none;
+    border: none;
+  }
 
-.task .delete-btn i {
-  color: #666;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
+  .task .delete-btn i {
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
 
-.task .delete-btn i:hover {
-  color: #222;
-}
+  .task .delete-btn i:hover {
+    color: #222;
+  }
 
-button#delete {
-  background-color: orange;
-}
+  button#delete {
+    background-color: orange;
+  }
 
-#modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.4);
-  display: none;
-  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
-  z-index: 999;
-}
+  #modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
 
-#modal .wrap {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #333;
-  box-shadow: 1px 3px #000;
-  width: 60%;
-  height: 200px;
-  background-color: #fffcf1;
-  gap: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
+  #modal .wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #333;
+    box-shadow: 1px 3px #000;
+    width: 60%;
+    height: 200px;
+    background-color: #fffcf1;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
 
-#modal label {
-  display: block;
-  font-family: "PartialSans";
-  margin-bottom: 20px;
-  color: #333;
-}
+  #modal label {
+    display: block;
+    font-family: "PartialSans";
+    margin-bottom: 20px;
+    color: #333;
+  }
 
-#modal.on {
-  display: block;
-}
+  #modal.on {
+    display: block;
+  }
 
-button#add {
-  width: 30px;
-  height: 30px;
-}
+  button#add {
+    width: 30px;
+    height: 30px;
+  }
 
-input {
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #222;
-  cursor: pointer;
-}
+  input {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #222;
+    cursor: pointer;
+  }
 
-#add {
-  cursor: pointer;
-  position: relative;
-}
-.check {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #333;
-  border-radius: 4px;
-  position: relative;
-  cursor: pointer;
-}
-.checkWrap {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
+  #add {
+    cursor: pointer;
+    position: relative;
+  }
 
-.checkWrap .check {
-  position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  opacity: 1; /* 안 보이게 */
-  cursor: pointer;
-}
+  .checkWrap {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
 
-.checkWrap .checkIcon {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none; /* 클릭은 아래 체크박스가 받게 */
-  font-size: 18px;
-  color: #ff67a1;
+  .checkWrap .check {
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .checkWrap .checkIcon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-size: 18px;
+    color: #ff67a1;
+  }
+}
+@media (max-width: 719px) {
+  #container {
+    max-width: 1200px;
+    width: 100%;
+    height: calc(100vh - 100px);
+    box-sizing: border-box;
+    position: relative;
+    transform: translateZ(0);
+    z-index: 1;
+    border: 1px solid #222;
+  }
+
+  #container > .inner {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 60px 0px;
+    box-sizing: border-box;
+    background-color: #fef2f7;
+  }
+
+  #container > .inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  #container #top {
+    position: sticky;
+    top: 0;
+    width: 90%;
+    margin: 0px auto;
+    z-index: 999;
+    padding-bottom: 20px;
+    background-color: #fef2f7;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 2.9vw, 10rem);
+    margin-bottom: 50px;
+    font-family: "PartialSans";
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .tabsArea {
+    width: calc(100% - 10px);
+    margin: 0px auto;
+    height: 90px;
+    background-color: #fef2f7;
+    position: relative;
+    z-index: 10;
+  }
+
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 0px auto;
+    background-color: #fff;
+    width: clamp(400px, 60%, 750px);
+    padding: 2px 6px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 0px #000;
+    font-family: "YeogiOttaeJalnan";
+    font-size: 15px;
+    color: #333;
+    z-index: 10;
+  }
+
+  .tabs li {
+    width: calc(100% / 3);
+    box-sizing: border-box;
+    padding: 0px 20px;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+  }
+
+  .tabs li:hover {
+    background-color: #ddf3dd;
+    border: 1px solid #666;
+  }
+
+  .tabs li.on {
+    font-weight: bold;
+    background-color: #c2e1c2;
+    border: 1px solid #333;
+  }
+
+  .taskWrap {
+    position: relative;
+    width: clamp(400px, 40vw, 500px);
+    margin: 0px auto;
+    height: 500px;
+    border: 1px solid #222;
+    box-sizing: border-box;
+    border-radius: 60px;
+    box-shadow: 1px 6px 0px #000;
+  }
+
+  #taskBoard {
+    max-width: 700px;
+    margin: 0px auto;
+    z-index: 3;
+    background-color: #fffcf1;
+    border-radius: 60px;
+    box-sizing: border-box;
+    height: 500px;
+    overflow-y: scroll;
+    border: 1px solid #222;
+  }
+
+  #taskBoard::-webkit-scrollbar {
+    display: none;
+  }
+
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 40px;
+    box-sizing: border-box;
+    height: 110px;
+    position: relative;
+    z-index: 4;
+    width: 90%;
+    margin: 0px auto;
+    background-image: url("img/bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .task-done {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+
+  button#addList {
+    background-color: rgba(255, 103, 161, 1);
+    position: absolute;
+    bottom: -34px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 66px;
+    height: 66px;
+    border-radius: 40px;
+    border: 1px solid #333;
+    padding: 6px;
+    box-shadow: 1px 3px #000;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  button#addList:hover {
+    background-color: rgba(255, 0, 98, 1);
+  }
+
+  button#close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    border: 1px solid #333;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    background-color: #fffcf1;
+    box-shadow: 1px 2px #000;
+    cursor: pointer;
+  }
+
+  button#close:hover {
+    background-color: #666;
+    color: #fff;
+  }
+
+  .cls-1 {
+    fill: none;
+    stroke: #333;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+
+  .task input.check {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .task .delete-btn {
+    background: none;
+    border: none;
+  }
+
+  .task .delete-btn i {
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .task .delete-btn i:hover {
+    color: #222;
+  }
+
+  button#delete {
+    background-color: orange;
+  }
+
+  #modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+
+  #modal .wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #333;
+    box-shadow: 1px 3px #000;
+    width: 60%;
+    height: 200px;
+    background-color: #fffcf1;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  #modal label {
+    display: block;
+    font-family: "PartialSans";
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  #modal.on {
+    display: block;
+  }
+
+  button#add {
+    width: 30px;
+    height: 30px;
+  }
+
+  input {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #222;
+    cursor: pointer;
+  }
+
+  #add {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .checkWrap {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .checkWrap .check {
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .checkWrap .checkIcon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-size: 18px;
+    color: #ff67a1;
+  }
 }
