@@ -10,6 +10,13 @@ let mode = "all"; //전체보이기,"모두"탭, all, going,done이 들어갈 �
 let filterList = []; //진행중,끝남으로 갈지 정하는 변수
 let list = [];
 
+user.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    addTask();
+    modal.classList.remove("on");
+  }
+});
+
 add.addEventListener("click", addTask);
 function addTask() {
   //   console.log(user.value);
@@ -38,42 +45,32 @@ function render() {
   }
 
   list.forEach((task) => {
-    //if문
-    //   if (task.isComplete == true) {
-    //     result += `
-    // <div class="task">
-    //   <div class="task-done">${task.taskContent}</div>
-    //   <div>
-    //     <button onclick = "complete(${task.id})">check</button>
-    //     <button onclick = "deleteTask(${task.id})">delete</button>
-    //   </div>
-    // </div>`;
-    //   } else {
-    //     result += `
-    // <div class="task">
-    //   <div >${task.taskContent}</div>
-    //   <div>
-    //     <button onclick = "complete(${task.id})">check</button>
-    //     <button onclick = "deleteTask(${task.id})">delete</button>
-    //   </div>
-    // </div>`;
-    //   }
+    const checkedAttr = task.isComplete ? "checked" : "";
+    const iconHTML = task.isComplete
+      ? "<i class='fa-solid fa-square-check'></i>"
+      : "";
 
-    //삼항연산자
     result += `
-  <div class="task">
-    <input type="checkbox" class="check" onclick="complete(${task.id})">
-    <div class="list ${task.isComplete ? "task-done" : ""}">
-      ${task.taskContent}
-    </div>
-    <button class="delete-btn" onclick="deleteTask(${
-      task.id
-    })"><i class="fa-solid fa-trash"></i></button>
-  </div>
-`;
+      <div class="task">
+        <div class="checkWrap">
+          <input type="checkbox" class="check" data-id="${
+            task.id
+          }" ${checkedAttr} onclick="complete(${task.id})">
+          <span class="checkIcon">${iconHTML}</span>
+        </div>
+        <div class="list ${task.isComplete ? "task-done" : ""}">
+          ${task.taskContent}
+        </div>
+        <button class="delete-btn" onclick="deleteTask(${task.id})">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    `;
   });
+
   taskBoard.innerHTML = result;
 }
+
 function complete(id) {
   //   console.log(id);
   taskList.forEach((task) => {
@@ -154,4 +151,25 @@ addList.addEventListener("click", () => {
 const close = document.querySelector("#modal button#close");
 close.addEventListener("click", () => {
   modal.classList.remove("on");
+});
+add.addEventListener("click", () => {
+  modal.classList.remove("on");
+});
+// taskBoard.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("check")) {
+//     if (e.target.checked) {
+//     } else {
+//     }
+//   }
+// });
+taskBoard.addEventListener("click", (e) => {
+  if (e.target.classList.contains("check")) {
+    const icon = e.target.nextElementSibling; // 바로 옆 span
+
+    if (e.target.checked) {
+      icon.innerHTML = "<i class='fa-solid fa-square-check'></i>";
+    } else {
+      icon.innerHTML = "";
+    }
+  }
 });

@@ -5,6 +5,7 @@
   font-weight: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "YeogiOttaeJalnan";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
@@ -12,13 +13,16 @@
   font-weight: normal;
   font-display: swap;
 }
+
 * {
   margin: 0;
   padding: 0;
 }
+
 ul {
   list-style: none;
 }
+
 body {
   height: 100vh;
   background-color: lightblue;
@@ -28,7 +32,6 @@ body {
   text-align: center;
 }
 
-/*container*/
 #container {
   max-width: 1200px;
   width: 100%;
@@ -38,7 +41,6 @@ body {
   transform: translateZ(0);
   z-index: 1;
   border: 1px solid #222;
-  box-sizing: border-box;
 }
 
 #container > .inner {
@@ -49,9 +51,11 @@ body {
   box-sizing: border-box;
   background-color: #fef2f7;
 }
+
 #container > .inner::-webkit-scrollbar {
   display: none;
 }
+
 #container #top {
   position: sticky;
   top: 0;
@@ -61,6 +65,7 @@ body {
   padding-bottom: 20px;
   background-color: #fef2f7;
 }
+
 h1 {
   font-size: clamp(2.2rem, 2.9vw, 10rem);
   margin-bottom: 50px;
@@ -69,28 +74,7 @@ h1 {
   font-weight: normal;
   text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
 }
-/*tabs*/
-.tabs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #333;
-  border-radius: 10px;
-  margin: 20px 0px;
-  background-color: #fff;
-  width: 60%;
-  margin: 0px auto;
-  padding: 2px 6px;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 0px #000;
-  font-family: "YeogiOttaeJalnan";
-  font-weight: normal;
-  font-size: 15px;
-  color: #333;
-  z-index: 10;
 
-  /* font-size: 20px; */
-}
 .tabsArea {
   width: calc(100% - 10px);
   margin: 0px auto;
@@ -99,6 +83,25 @@ h1 {
   position: relative;
   z-index: 10;
 }
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin: 0px auto;
+  background-color: #fff;
+  width: 60%;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 0px #000;
+  font-family: "YeogiOttaeJalnan";
+  font-size: 15px;
+  color: #333;
+  z-index: 10;
+}
+
 .tabs li {
   width: calc(100% / 3);
   box-sizing: border-box;
@@ -108,18 +111,18 @@ h1 {
   line-height: 40px;
   border-radius: 6px;
 }
+
 .tabs li:hover {
   background-color: #ddf3dd;
   border: 1px solid #666;
 }
+
 .tabs li.on {
-  font-weight: bold;
   font-weight: bold;
   background-color: #c2e1c2;
   border: 1px solid #333;
 }
 
-/*task*/
 .taskWrap {
   position: relative;
   width: 700px;
@@ -130,6 +133,7 @@ h1 {
   border-radius: 60px;
   box-shadow: 1px 6px 0px #000;
 }
+
 #taskBoard {
   width: 700px;
   margin: 0px auto;
@@ -141,18 +145,19 @@ h1 {
   overflow-y: scroll;
   border: 1px solid #222;
 }
+
 #taskBoard::-webkit-scrollbar {
   display: none;
 }
+
 .task {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 4px 40px;
   box-sizing: border-box;
   height: 110px;
   position: relative;
-  display: flex;
-  align-items: center;
   z-index: 4;
   width: 80%;
   margin: 6px auto;
@@ -161,17 +166,12 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
 }
-.task::-webkit-scrollbar {
-  display: none;
-}
 
-/*취소선*/
 .task-done {
   text-decoration: line-through;
   color: #aaa;
 }
 
-/*button*/
 button#addList {
   background-color: rgba(255, 103, 161, 1);
   position: absolute;
@@ -179,39 +179,18 @@ button#addList {
   right: -20px;
   width: 66px;
   height: 66px;
-  line-height: 40px;
   border-radius: 40px;
-  border: none;
-  padding: 6px;
   border: 1px solid #333;
-  box-sizing: border-box;
+  padding: 6px;
   box-shadow: 1px 3px #000;
   cursor: pointer;
   z-index: 1001;
 }
-.task .delete-btn {
-  background: none;
-  border: none;
-}
-.task .delete-btn i {
-  color: #666;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-.task .delete-btn i:hover {
-  color: #222;
-}
 
-.task::after {
-  border: 1px solid #222;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
 button#addList:hover {
   background-color: rgba(255, 0, 98, 1);
 }
+
 button#close {
   position: absolute;
   right: -15px;
@@ -230,6 +209,7 @@ button#close:hover {
   background-color: #666;
   color: #fff;
 }
+
 .cls-1 {
   fill: none;
   stroke: #333;
@@ -237,8 +217,15 @@ button#close:hover {
   stroke-miterlimit: 10;
   stroke-width: 2px;
 }
-.task input[type="checkbox"] {
-  appearance: none; /* 브라우저 기본 체크박스 제거 */
+.check {
+  appearance: none;
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+}
+
+.task input.check {
+  appearance: none;
   width: 20px;
   height: 20px;
   border: 2px solid #333;
@@ -248,31 +235,26 @@ button#close:hover {
   transition: all 0.2s;
 }
 
-/* 체크됐을 때 (채워짐 + 체크 표시) */
-.task input[type="checkbox"]:checked {
-  background-color: #4caf50;
-  border-color: #4caf50;
+.task .delete-btn {
+  background: none;
+  border: none;
 }
 
-/* 체크 표시 (✔︎) */
-.task input[type="checkbox"]:checked::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 1px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+.task .delete-btn i {
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.task .delete-btn i:hover {
+  color: #222;
 }
 
 button#delete {
   background-color: orange;
 }
 
-/*#modal*/
-section#modal {
+#modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -284,7 +266,8 @@ section#modal {
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
   z-index: 999;
 }
-section#modal .wrap {
+
+#modal .wrap {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -300,24 +283,63 @@ section#modal .wrap {
   justify-content: center;
   z-index: 1000;
 }
-section#modal label {
+
+#modal label {
   display: block;
   font-family: "PartialSans";
   margin-bottom: 20px;
   color: #333;
 }
-section#modal.on {
+
+#modal.on {
   display: block;
 }
+
 button#add {
   width: 30px;
   height: 30px;
 }
+
 input {
   height: 30px;
   line-height: 30px;
   border: 1px solid #222;
+  cursor: pointer;
 }
-.check:checked {
-  background-color: red;
+
+#add {
+  cursor: pointer;
+  position: relative;
+}
+.check {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+.checkWrap {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.checkWrap .check {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  opacity: 1; /* 안 보이게 */
+  cursor: pointer;
+}
+
+.checkWrap .checkIcon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* 클릭은 아래 체크박스가 받게 */
+  font-size: 18px;
+  color: #ff67a1;
 }
