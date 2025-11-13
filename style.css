@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "PartialSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/PartialSansKR-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YeogiOttaeJalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+body {
+  height: 100vh;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*container*/
+#container {
+  width: 50%;
+  max-width: 800px;
+  min-width: 680px;
+  height: calc(100vh - 100px);
+  /* box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4); */
+  padding: 50px 0px;
+  box-sizing: border-box;
+  position: relative;
+  transform: translateZ(0);
+
+  z-index: 1;
+}
+#container > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+#container > .inner {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#container > .inner::-webkit-scrollbar {
+  display: none;
+}
+#container #top {
+  position: sticky;
+  top: 0;
+  width: 90%;
+  margin: 0px auto;
+  z-index: 999;
+  padding-bottom: 20px;
+  background-color: #fef2f7;
+}
+h1 {
+  margin-bottom: 50px;
+  font-family: "PartialSans";
+  letter-spacing: 2px;
+  font-weight: normal;
+  text-shadow: 1px 3px #fff;
+}
+/*tabs*/
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin: 20px 0px;
+  background-color: #fff;
+  width: 60%;
+  margin: 0px auto;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 0px #000;
+  font-family: "YeogiOttaeJalnan";
+  font-weight: normal;
+  font-size: 15px;
+  color: #333;
+  z-index: 10;
+
+  /* font-size: 20px; */
+}
+.tabsArea {
+  width: calc(100% - 10px);
+  margin: 0px auto;
+  height: 90px;
+  background-color: #fef2f7;
+  position: relative;
+  z-index: 10;
+}
+.tabs li {
+  width: calc(100% / 3);
+  box-sizing: border-box;
+  padding: 0px 20px;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 6px;
+}
+.tabs li:hover {
+  background-color: #ddf3dd;
+  border: 1px solid #666;
+}
+.tabs li.on {
+  font-weight: bold;
+  font-weight: bold;
+  background-color: #c2e1c2;
+  border: 1px solid #333;
+}
+
+/*task*/
+
+#taskBoard {
+  z-index: 3;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  margin: 20px 0px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  z-index: 4;
+}
+.task::-webkit-scrollbar {
+  display: none;
+}
+
+/*취소선*/
+.task-done {
+  text-decoration: line-through;
+}
+
+/*button*/
+button#addList {
+  background-color: rgba(255, 103, 161, 1);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 66px;
+  height: 66px;
+  line-height: 40px;
+  border-radius: 40px;
+  border: none;
+  padding: 6px;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  box-shadow: 1px 3px #000;
+  cursor: pointer;
+  z-index: 1001;
+}
+button#addList:hover {
+  background-color: rgba(255, 0, 98, 1);
+}
+button#close {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  border: 1px solid #333;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  background-color: #fffcf1;
+  box-shadow: 1px 2px #000;
+  cursor: pointer;
+}
+
+button#close:hover {
+  background-color: #666;
+  color: #fff;
+}
+.cls-1 {
+  fill: none;
+  stroke: #333;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+.task input[type="checkbox"] {
+  appearance: none; /* 브라우저 기본 체크박스 제거 */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+/* 체크됐을 때 (채워짐 + 체크 표시) */
+.task input[type="checkbox"]:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+/* 체크 표시 (✔︎) */
+.task input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+button#delete {
+  background-color: orange;
+}
+
+/*#modal*/
+section#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+section#modal .wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #333;
+  box-shadow: 1px 3px #000;
+  width: 80%;
+  height: 200px;
+  background-color: #fffcf1;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+section#modal .wrap .inner {
+}
+section#modal label {
+  display: block;
+  font-family: "PartialSans";
+  margin-bottom: 20px;
+  color: #333;
+}
+section#modal.on {
+  display: block;
+}

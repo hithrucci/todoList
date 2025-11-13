@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <img src="img/bg.png" />
+      <div class="inner">
+        <section id="top">
+          <h1>TO-DO-LIST</h1>
+          <div class="tabsArea">
+            <ul class="tabs">
+              <li id="all" class="on">모두</li>
+              <li id="going">진행중</li>
+              <li id="done">끝남</li>
+            </ul>
+          </div>
+        </section>
+
+        <div id="taskBoard"></div>
+
+        <button id="addList">
+          <svg
+            id="Layer_1"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 33 33"
+          >
+            <line class="cls-1" x1="16.5" y1=".5" x2="16.5" y2="32.5" />
+            <line class="cls-1" x1="32.5" y1="16.5" x2=".5" y2="16.5" />
+          </svg>
+        </button>
+        <section id="modal">
+          <div class="wrap">
+            <div class="inner">
+              <label>오늘의 할 일</label>
+              <input id="user" />
+              <button id="add">+</button>
+              <button id="close">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="custom3.js"></script>
+  </body>
+</html>
+<!--
+1.input에 내용 입력 후 #add를 누르면 .task에 해당 내용 추가하기.(입력한 내용을 담을 수 있는 배열이 있어야 함)
+
+2.추가된 내용의 check를 누르면 스타일변경,
+delete를 누르면 내용 삭제
+
+3. tabs의 li를 클릭하면 on클래스 붙이기 
+
+
+
+
+
+동기식 :: 작업을 순차적으로 처리하는 방식(요청을 보내고 응답을 받은 후 다음 동작을 실행)
+비동기식 :: 
+(요청을 보내고 응답을 기다리지 않고 다음 동작을 실행)
+
+Date.now :: 1970년 1월1일 0시 0분 0초부터 현재까지 경과된 시간을 밀리초 단위로 표현, 같은 요소에 각기 다른 고유값을 필요로 할 때 사용할 수 있음
+-->
