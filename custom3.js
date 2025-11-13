@@ -60,16 +60,16 @@ function render() {
     //   }
 
     //삼항연산자
-    result += `<div class="task">
-        <input type ="checkbox" id ="complete" onclick = "complete(${
-          task.id
-        })"></input><div class= "list ${task.isComplete ? "task-done" : ""}"
-        >${task.taskContent}</div>
-        
-         
-          <button id="delete" onclick = "deleteTask(${task.id})">delete</button>
-      
-         </div>
+    result += `
+  <div class="task">
+    <input type="checkbox" class="check" onclick="complete(${task.id})">
+    <div class="list ${task.isComplete ? "task-done" : ""}">
+      ${task.taskContent}
+    </div>
+    <button class="delete-btn" onclick="deleteTask(${
+      task.id
+    })"><i class="fa-solid fa-trash"></i></button>
+  </div>
 `;
   });
   taskBoard.innerHTML = result;
