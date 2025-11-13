@@ -426,7 +426,7 @@ body {
 
   .taskWrap {
     position: relative;
-    width: clamp(400px, 40vw, 500px);
+    width: clamp(400px, 90vw, 520px);
     margin: 0px auto;
     height: 500px;
     border: 1px solid #222;
